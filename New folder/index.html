@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPCS Global Flyer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+        
+        .word-art {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8, #845ef7, #5c7cfa, #339af0, #22b8cf, #20c997, #51cf66, #94d82d, #fcc419, #ff922b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: bounce 1s infinite;
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: auto;
+        }
+        
+        .reviews {
+            overflow: hidden;
+            height: 150px;
+            position: relative;
+        }
+        
+        .reviews ul {
+            position: absolute;
+            width: 100%;
+            animation: scroll 10s linear infinite;
+        }
+        
+        @keyframes scroll {
+            0% {
+                top: 100%;
+            }
+            100% {
+                top: -100%;
+            }
+        }
+        
+        .review-item {
+            background: #f3f4f6;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-enquire {
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .btn-enquire:hover {
+            background: #128C7E;
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .profile img {
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .profile img:hover {
+            transform: scale(1.1);
+        }
+        
+        .profile .text-xl {
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        
+        .profile .text-xl:hover {
+            color: #25D366;
+            transform: scale(1.1);
+        }
+        
+        .profile .text-gray-600 {
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        
+        .profile .text-gray-600:hover {
+            color: #128C7E;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center min-h-screen relative">
+    <img src="Ipcs.jpeg" alt="Logo" class="logo">
+    <div class="container flex flex-col items-center justify-center space-y-8 p-12 bg-blue-500 rounded-lg shadow-lg relative">
+        <div class="flex items-center space-x-8">
+            <div class="profile bg-white p-8 rounded-lg shadow-lg text-center">
+                <img src="Engineer.jpg" alt="Profile" class="w-40 h-40 rounded-full mx-auto mb-4">
+                <div class="text-xl font-bold">Shivam Satyarthi</div>
+                <div class="text-gray-600">Software Trainer at IPCS Global</div>
+            </div>
+            <div class="flyer bg-gradient-to-b from-green-500 to-white p-12 rounded-lg text-center shadow-lg">
+                <div class="title word-art mb-4">Solution For All Needs !!</div>
+                <div class="subtitle text-xl font-bold text-gray-800 mb-4 animate-fade-in">Ready to Serve U in the best Possible Way <span class="text-green-600">Solutions ?</span></div>
+                <ul class="programs space-y-4">
+                    <li class="bg-green-700 text-white p-4 rounded-lg flex justify-between items-center">
+                        Career Counselling And Resume Building
+                        <button onclick="enquireNow('Career Counselling And Resume Building')" class="btn-enquire">Enquire Now</button>
+                    </li>
+                    <li class="bg-green-700 text-white p-4 rounded-lg flex justify-between items-center">
+                        Personal Website
+                        <button onclick="enquireNow('Personal Website')" class="btn-enquire">Enquire Now</button>
+                    </li>
+                    <li class="bg-green-700 text-white p-4 rounded-lg flex justify-between items-center">
+                        Business Website
+                        <button onclick="enquireNow('Business Website')" class="btn-enquire">Enquire Now</button>
+                    </li>
+                    <li class="bg-green-700 text-white p-4 rounded-lg flex justify-between items-center">
+                        Industry Website
+                        <button onclick="enquireNow('Industry Website')" class="btn-enquire">Enquire Now</button>
+                    </li>
+                    <li class="bg-green-700 text-white p-4 rounded-lg flex justify-between items-center">
+                        Final Year Projects For Students
+                        <button onclick="enquireNow('Final Year Projects For Students')" class="btn-enquire">Enquire Now</button>
+                    </li>
+                    <li class="bg-green-700 text-white p-4 rounded-lg flex justify-between items-center">
+                        Poster And Designing
+                        <button onclick="enquireNow('Poster And Designing')" class="btn-enquire">Enquire Now</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="online-classes bg-gradient-to-b from-blue-500 to-white p-8 rounded-lg text-center shadow-lg w-3/4">
+            <div class="title text-3xl font-bold text-white mb-4">Online Coding Classes</div>
+            <ul class="subjects space-y-4">
+                <li class="bg-blue-700 text-white p-4 rounded-lg">Python and Data Science</li>
+                <li class="bg-blue-700 text-white p-4 rounded-lg">AIML</li>
+                <li class="bg-blue-700 text-white p-4 rounded-lg">C Language</li>
+                <li class="bg-blue-700 text-white p-4 rounded-lg">Web Development Full Stack</li>
+            </ul>
+        </div>
+        <div class="reviews bg-gradient-to-b from-purple-500 to-white p-8 rounded-lg text-center shadow-lg w-3/4">
+            <div class="title text-3xl font-bold text-white mb-4">Users Review</div>
+            <div class="reviews">
+                <ul>
+                    <li class="review-item">"Great experience! Highly recommend." - Bhagyashree Shree</li>
+                    <li class="review-item">"The best service I have ever used." - Satyam </li>
+                    <li class="review-item">"Amazing support and quality." - Aditya Praksh</li>
+                    <li class="review-item">"Very satisfied with the results." - Ravi Bhushan</li>
+                    <li class="review-item">"Professional and reliable." - User E</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function enquireNow(course) {
+            const whatsappNumber = '919508271236';
+            const message = `I am interested in ${course}`;
+            const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+
+</html>
